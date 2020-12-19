@@ -77,7 +77,7 @@ passport.use(
     {
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "https://tellyourlies.herokuapp.com/auth/google/lies"
+    callbackURL: "http://tellyourlies.herokuapp.com/auth/google/lies"
   },
   function(accessToken, refreshToken, profile, cb) {
 console.log(profile);
