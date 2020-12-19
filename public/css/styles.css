@@ -14,3 +14,107 @@ body {
   color: #fff;
   background-color: #000;
 }
+
+/*input css*/
+
+.inputcs {
+  margin-top: 20px;
+  width: 300px;
+  padding: 20px;
+  font-size: 24px;
+  color: #2d8eff;
+  outline: none;
+  border: 2px solid #2d8eff;
+}
+
+.inputcs:focus {
+  border: none;
+  outline: 2px solid #2d8eff;
+}
+.inputcs:focus + span,
+.inputcs:valid + span {
+  top: -75px;
+  left: 10px;
+  font-size: 20px;
+  padding: 0 10px;
+  background: #fff;
+}
+
+span {
+  position: relative;
+  top: -40px;
+  left: 15px;
+  font-size: 25px;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  font-weight: 600;
+  font-family: sans-serif;
+  transition: .4s;
+  color: #2d8eff;
+}
+
+/* button css*/
+.hover {
+  --width: 100%;
+  --time: 0.6s;
+  position: relative;
+  display: inline-block;
+  height: 1em;
+  padding: 1em;
+  border-radius: 8px;
+  color: white;
+  background: #2d8eff;
+  overflow: hidden;
+}
+
+.hover text {
+  position: relative;
+  z-index: 5;
+  font-size: 16px;
+  font-weight: bold;
+  transition: color var(--time);
+}
+
+.hover span {
+  position: absolute;
+  display: block;
+  content: "";
+  z-index: 0;
+  width: 0;
+  height: 0;
+  border-radius: 100%;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  transition: width var(--time),
+    padding-top var(--time);
+}
+
+.hover:hover span {
+  width: calc(var(--width) * 2.25);
+  padding-top: calc(var(--width) * 2.25);
+}
+
+.hover.flash:hover text {
+  color: white;
+}
+
+.hover.flash span {
+  background: #fc5185;
+}
+
+.animated {
+  --angle: 5deg;
+  animation: shake 0.4s;
+}
+
+@keyframes shake {
+  25% {
+    transform: rotate(calc(var(--angle) * -1));
+  }
+  50% {
+    transform: rotate(var(--angle));
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

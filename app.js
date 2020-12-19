@@ -12,6 +12,11 @@ const passportLocalMongoose = require("passport-local-mongoose");
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const findOrCreate = require("mongoose-findorcreate");
 
+// //creating const for button animation
+// const ANIMATEDCLASSNAME = "animated";
+// const ELEMENTS = document.querySelectorAll(".hover");
+// const ELEMENTS_SPAN = [];
+
 //creating a new app instance using express
 const app = express();
 
@@ -36,6 +41,12 @@ app.use(passport.session());
 
 mongoose.connect("mongodb+srv://@tellyourlies.bz5jh.mongodb.net/lies", {user: process.env.MONGO_USER, pass: process.env.MONGO_PASSWORD, useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set("useCreateIndex", true);
+
+// If database connection errors
+    mongoose.connection.on('error', (err) => {
+      console.log('Database error: ' + err);
+      //winston.error('Failed to connect to database)
+    });
 
 const userSchema = new mongoose.Schema ({
   email: String,
@@ -66,7 +77,7 @@ passport.use(
     {
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://tellyourlies.herokuapp.com/auth/google/lies"
+    callbackURL: "https://tellyourlies.herokuapp.com/auth/google/lies"
   },
   function(accessToken, refreshToken, profile, cb) {
 console.log(profile);
@@ -176,6 +187,20 @@ app.post("/login", function(req, res){
     }
   });
 });
+
+// //button animation
+// ELEMENTS.forEach((element, index) => {
+//   let addAnimation = false;
+//   if (element.classlist[1] == "flash") {
+//     element.addEventListener("animationend", e => {
+//       element.classList.remove(ANIMATEDCLASSNAME);
+//     });
+//     addAnimation = true;
+//   }
+//   if (!ELEMENTS_SPAN[index]) {
+//     ELEMENTS_SPAN[index] = element.querySelector("span");
+//   }
+// });
 
 let port = process.env.PORT;
 if (port == null || port == "") {
