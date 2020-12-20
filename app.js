@@ -40,6 +40,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 mongoose.connect("mongodb+srv://@tellyourlies.bz5jh.mongodb.net/lies", {user: process.env.MONGO_USER, pass: process.env.MONGO_PASSWORD, useNewUrlParser: true, useUnifiedTopology: true});
+
 mongoose.set("useCreateIndex", true);
 
 // If database connection errors
