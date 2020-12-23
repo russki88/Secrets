@@ -1,18 +1,38 @@
 
 body {
-  background-color: #E8ECEF;
+  background-color: #f8f8ff;
+  color: #666699;
 }
 
+h1 {
+  color: #666699;
+}
+
+/* Home page */
 .centered {
-    padding-top: 200px;
+    padding-top: 100px;
     text-align: center;
 }
 
+.lead {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #8372AC;
+}
+
+.space {
+  margin: 0 20px;
+}
+
+/* Lie Page */
 .lie-text {
   text-align: center;
-  font-size: 2rem;
-  color: #fff;
-  background-color: #000;
+  font-size: 1.5rem;
+  color: #666699;
+  background-color: white;
+  padding: 10px 150px;
+  margin: 20px 100px;
+  border-radius: 35px;
 }
 
 /*input css*/
@@ -21,15 +41,15 @@ body {
   margin-top: 20px;
   width: 300px;
   padding: 20px;
-  font-size: 24px;
-  color: #2d8eff;
+  font-size: 16px;
+  color: #8585AD;
   outline: none;
-  border: 2px solid #2d8eff;
+  border: 2px solid #8585AD;
 }
 
 .inputcs:focus {
   border: none;
-  outline: 2px solid #2d8eff;
+  outline: 2px solid #0000F0;
 }
 .inputcs:focus + span,
 .inputcs:valid + span {
@@ -50,72 +70,35 @@ span {
   font-weight: 600;
   font-family: sans-serif;
   transition: .4s;
-  color: #2d8eff;
+  color: #8585AD;
 }
 
 /* button css*/
-.hover {
-  --width: 100%;
-  --time: 0.6s;
+.buttonText {
   position: relative;
-  display: inline-block;
-  height: 1em;
-  padding: 1em;
-  border-radius: 8px;
-  color: white;
-  background: #2d8eff;
-  overflow: hidden;
+  top: -5px;
+}
+.boxShadow {
+  width: 140px;
+  height: 45px;
+  font-family: sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #0000F0;
+  background-color: #f8f8ff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
 }
 
-.hover text {
-  position: relative;
-  top: -12px;
-  z-index: 5;
-  font-size: 16px;
-  font-weight: bold;
-  transition: color var(--time);
-}
-
-.hover span {
-  position: absolute;
-  display: block;
-  content: "";
-  z-index: 0;
-  width: 0;
-  height: 0;
-  border-radius: 100%;
-  background: #fff;
-  transform: translate(-50%, -50%);
-  transition: width var(--time),
-    padding-top var(--time);
-}
-
-.hover:hover span {
-  width: calc(var(--width) * 2.25);
-  padding-top: calc(var(--width) * 2.25);
-}
-
-.hover.flash:hover text {
-  color: white;
-}
-
-.hover.flash span {
-  background: #fc5185;
-}
-
-.animated {
-  --angle: 5deg;
-  animation: shake 0.4s;
-}
-
-@keyframes shake {
-  25% {
-    transform: rotate(calc(var(--angle) * -1));
-  }
-  50% {
-    transform: rotate(var(--angle));
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+.boxShadow:hover {
+  background-color: #0000F0;
+  box-shadow: 0px 15px 20px rgba(0, 0, 139, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
 }

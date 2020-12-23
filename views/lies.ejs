@@ -3,7 +3,7 @@
 <div class="jumbotron text-center">
   <div class="container">
     <i class="fas fa-key fa-6x"></i>
-    <h1 class="display-3">Tell the Lies you have told!</h1>
+    <h1 class="display-3">Tell the Lies you have told or heard!</h1>
 
     <% usersWithLies.forEach(function(user){ %>
       <p class="lie-text"><%=user.lie%></p>
@@ -11,8 +11,8 @@
 
     <hr>
 
-    <a class="btn btn-light btn-lg" href="/logout" role="button">Log Out</a>
-    <a class="btn btn-dark btn-lg" href="/submit" role="button">Submit a Lie</a>
+    <a class="btn boxShadow space" href="/logout" role="button"><span></span><text class="buttonText">Log Out</text></a>
+    <a class="btn boxShadow space" href="/submit" role="button"><span></span><text class="buttonText">Submit A Lie</text></a>
   </div>
 </div>
 
