@@ -78,6 +78,11 @@ span {
   position: relative;
   top: -5px;
 }
+
+.btnLong {
+  letter-spacing: 1px;
+}
+
 .boxShadow {
   width: 140px;
   height: 45px;
